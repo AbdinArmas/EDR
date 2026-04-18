@@ -96,8 +96,138 @@
         .btn svg { margin-right: 8px; width: 20px; height: 20px; fill: currentColor; }
         @media (min-width: 768px) { .hero h1 { font-size: 3.5rem; } .product-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(3, 1fr); } .features-grid { grid-template-columns: repeat(4, 1fr); } }
+        /* Botón flotante de registro/login */
+.register-float {
+    position: fixed;
+    bottom: 100px; /* Arriba del WhatsApp */
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.5);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+.register-float:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-hover);
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+/* Modal para registro/login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(16,185,129,0.3);
+}
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: var(--bg-color);
+    border: 1px solid var(--text-muted);
+    border-radius: 8px;
+    color: white;
+}
+.modal-content button {
+    margin-top: 10px;
+    width: 100%;
+}
+.close-modal {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-avatar {
+    background: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
     </style>
 </head>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCBvUhrt9yh60u616zEq7LnoZpVXXkVBEQ",
+    authDomain: "edrunners-ac6e0.firebaseapp.com",
+    projectId: "edrunners-ac6e0",
+    storageBucket: "edrunners-ac6e0.firebasestorage.app",
+    messagingSenderId: "192001208731",
+    appId: "1:192001208731:web:3ae4560c57c8332b5ff13e"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+<!-- Botón flotante de registro/login (aparece solo si no ha iniciado sesión) -->
+<div id="registerBtn" class="register-float" style="display: flex;">
+    🔐
+</div>
+
+<!-- Modal de autenticación -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modalTitle">Regístrate</h3>
+        <input type="email" id="emailInput" placeholder="Correo electrónico">
+        <input type="password" id="passwordInput" placeholder="Contraseña">
+        <button id="submitAuthBtn" class="btn">Registrarse</button>
+        <p id="toggleAuthMsg" style="margin-top: 15px; cursor: pointer; color: var(--primary-color);">¿Ya tienes cuenta? Inicia sesión</p>
+        <div id="authError" style="color: #ff4444; margin-top: 10px;"></div>
+    </div>
+</div>
+
+<!-- Panel de usuario (se muestra cuando está logueado) -->
+<div id="userPanel" class="register-float" style="display: none; background-color: var(--primary-color);">
+    <div class="user-info">
+        <div class="user-avatar" id="userAvatar">U</div>
+        <span id="userEmailShort" style="font-size: 0.9rem; display: none;"></span>
+    </div>
+</div>
 <body>
 
     <header>
@@ -159,7 +289,7 @@
                     <div class="payment-methods">
                         <div class="payment-badge">Pago Móvil (Banesco)</div>
                         <div class="payment-badge">Pago Móvil (Provincial)</div>
-                        <div class="payment-badge"><img src="image/banco/mer.webp" alt="" loading="lazy" style="height: 30px; object-fit: contain;"> Mercantil</div>
+                        <div class="payment-badge"><img src="image/banco/mer.webp" alt="Mercantil" loading="lazy" style="height: 30px; object-fit: contain;"> Mercantil</div>
                         <div class="payment-badge">Divisas en Efectivo</div>
                         <div class="payment-badge">Tasa Oficial BCV</div>
                     </div>
@@ -180,7 +310,7 @@
             <h3 style="color: #fff; margin-bottom: 10px;">EDRunners <span class="text-primary">Pro</span></h3>
             <p>Barquisimeto, Estado Lara - Venezuela</p>
             <p>WhatsApp: 0412-9056964</p>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">&copy; 2026 EDRunners. Todos los derechos reservados.</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">&copy; 2026 EDRunners Pro. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -338,4 +468,109 @@
         });
     </script>
 </body>
+<!-- Firebase SDKs y lógica de autenticación -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    // 🔥 REEMPLAZA con tu configuración de Firebase (copiada de la consola)
+    const firebaseConfig = {
+        apiKey: "TU_API_KEY",
+        authDomain: "TU_PROJECT.firebaseapp.com",
+        projectId: "TU_PROJECT_ID",
+        // ... el resto de las credenciales
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Elementos del DOM
+    const registerBtn = document.getElementById('registerBtn');
+    const userPanel = document.getElementById('userPanel');
+    const modal = document.getElementById('authModal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const submitBtn = document.getElementById('submitAuthBtn');
+    const toggleMsg = document.getElementById('toggleAuthMsg');
+    const emailInput = document.getElementById('emailInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const authError = document.getElementById('authError');
+    let isLoginMode = false;
+
+    // Abrir modal al hacer clic en el botón flotante
+    registerBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    // Cerrar modal
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        authError.innerText = '';
+    });
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Cambiar entre Registro e Inicio de sesión
+    toggleMsg.addEventListener('click', () => {
+        isLoginMode = !isLoginMode;
+        if (isLoginMode) {
+            modalTitle.innerText = 'Iniciar Sesión';
+            submitBtn.innerText = 'Iniciar Sesión';
+            toggleMsg.innerText = '¿No tienes cuenta? Regístrate';
+        } else {
+            modalTitle.innerText = 'Regístrate';
+            submitBtn.innerText = 'Registrarse';
+            toggleMsg.innerText = '¿Ya tienes cuenta? Inicia sesión';
+        }
+        authError.innerText = '';
+    });
+
+    // Enviar formulario (registro o login)
+    submitBtn.addEventListener('click', async () => {
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        if (!email || !password) {
+            authError.innerText = 'Completa todos los campos';
+            return;
+        }
+        authError.innerText = '';
+        try {
+            if (isLoginMode) {
+                await signInWithEmailAndPassword(auth, email, password);
+            } else {
+                await createUserWithEmailAndPassword(auth, email, password);
+            }
+            modal.style.display = 'none';
+            emailInput.value = '';
+            passwordInput.value = '';
+        } catch (error) {
+            authError.innerText = error.message;
+        }
+    });
+
+    // Observar cambios en el estado de autenticación (logueado / no logueado)
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // Usuario logueado
+            registerBtn.style.display = 'none';
+            userPanel.style.display = 'flex';
+            const emailShort = user.email.split('@')[0];
+            document.getElementById('userEmailShort').innerText = emailShort;
+            document.getElementById('userAvatar').innerText = emailShort.charAt(0).toUpperCase();
+            // Al hacer clic en el panel se cierra sesión
+            userPanel.style.cursor = 'pointer';
+            userPanel.title = 'Clic para cerrar sesión';
+            userPanel.onclick = () => {
+                if (confirm('¿Cerrar sesión?')) {
+                    signOut(auth);
+                }
+            };
+        } else {
+            // No logueado
+            registerBtn.style.display = 'flex';
+            userPanel.style.display = 'none';
+        }
+    });
+</script>
 </html>
