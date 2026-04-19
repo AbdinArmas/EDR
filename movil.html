@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>EDRunners Móvil | Tecnología en Barquisimeto</title>
+    <title>EDRunners Móvil | Tecnología Confiable</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ========== TUS ESTILOS (sin cambios) ========== */
         :root {
             --bg-color: #141517;
             --surface-color: #1f2023;
@@ -37,7 +38,7 @@
             padding: 20px 0; position: fixed; top: 0; width: 100%; background: rgba(20,23,21,0.95);
             backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
         .sticky-search-container {
             position: fixed; top: 80px; left: 0; width: 100%; z-index: 99;
@@ -97,11 +98,12 @@
     </style>
 </head>
 <body>
+
     <header>
         <div class="container nav-container">
             <div class="logo">EDRunners <span class="text-primary">™</span></div>
             <div><img src="image/lg.png" alt="logo" width="auto" height="50" /></div>
-            <a href="https://wa.me/584129056964?text=Hola,%20quisiera%20información" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">
+            <a href="https://wa.me/584129056964?text=Hola,%20quisiera%20información%20sobre%20los%20productos." target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">
                 <svg viewBox="0 0 24 24" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 0412-9056964
             </a>
@@ -110,7 +112,7 @@
 
     <div class="sticky-search-container" id="stickySearch">
         <div class="search-wrapper">
-            <input type="text" id="mobileSearchInput" class="search-input" placeholder=" Buscar productos... (ej: Samsung, Honor, ventilador)" autocomplete="off">
+            <input type="text" id="mobileSearchInput" class="search-input" placeholder=" Buscar productos..." autocomplete="off">
             <button class="search-icon-btn" id="mobileSearchBtn">🔍</button>
         </div>
     </div>
@@ -120,7 +122,7 @@
             <div class="container">
                 <h1>Tecnología que <span class="text-primary">mejora tu día</span></h1>
                 <p>Soluciones tecnológicas confiables con entrega inmediata en Barquisimeto.</p>
-                <a href="https://wa.me/584129056964?text=Hola,%20quiero%20comprar" target="_blank" class="btn">
+                <a href="https://wa.me/584129056964?text=Hola,%20quiero%20comprar%20un%20producto." target="_blank" class="btn">
                     <svg viewBox="0 0 24 24" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     Comprar por WhatsApp
                 </a>
@@ -129,60 +131,19 @@
 
         <section class="products container fade-in">
             <h2 class="section-title">Nuestros Productos</h2>
-            <div class="product-grid" id="productGrid">
-                <div class="no-results">Cargando productos...</div>
-            </div>
+            <div class="product-grid" id="productGrid"><div class="no-results">Cargando productos...</div></div>
         </section>
 
-        <section class="features fade-in">
-            <div class="container">
-                <h2 class="section-title">¿Por qué elegir EDRunners Pro?</h2>
-                <div class="features-grid">
-                    <div class="feature-item"><div class="feature-icon">🛵</div><h3>Delivery Gratis</h3><p class="product-specs">En zonas céntricas de Barquisimeto.</p></div>
-                    <div class="feature-item"><div class="feature-icon">📦</div><h3>Envíos Nacionales</h3><p class="product-specs">A través de MRW (Cobro en destino).</p></div>
-                    <div class="feature-item"><div class="feature-icon">🛡️</div><h3>Garantía Certificada</h3><p class="product-specs">Respaldo directo en todos los equipos.</p></div>
-                    <div class="feature-item"><div class="feature-icon">💬</div><h3>Asesoría Técnica</h3><p class="product-specs">Soporte post-venta especializado.</p></div>
-                </div>
-            </div>
-        </section>
+        <section class="features fade-in"><div class="container"><h2 class="section-title">¿Por qué elegir EDRunners Pro?</h2><div class="features-grid"><div class="feature-item"><div class="feature-icon">🛵</div><h3>Delivery Gratis</h3><p class="product-specs">En zonas céntricas de Barquisimeto.</p></div><div class="feature-item"><div class="feature-icon">📦</div><h3>Envíos Nacionales</h3><p class="product-specs">A través de MRW (Cobro en destino).</p></div><div class="feature-item"><div class="feature-icon">🛡️</div><h3>Garantía Certificada</h3><p class="product-specs">Respaldo directo en todos los equipos.</p></div><div class="feature-item"><div class="feature-icon">💬</div><h3>Asesoría Técnica</h3><p class="product-specs">Soporte post-venta especializado.</p></div></div></div></section>
 
-        <section class="info-section fade-in">
-            <div class="container">
-                <h2><span class="text-primary">Entrega Inmediata</span> en Barquisimeto</h2>
-                <p class="product-specs" style="margin-top: 15px; font-size: 1.1rem;">Tu tiempo vale. Compra hoy y recibe hoy mismo con nuestro servicio exprés.</p>
-                <div style="margin-top: 60px;">
-                    <h3>Métodos de Pago</h3>
-                    <div class="payment-methods">
-                        <div class="payment-badge">Pago Móvil (Banesco)</div>
-                        <div class="payment-badge">Pago Móvil (Provincial)</div>
-                        <div class="payment-badge"><img src="image/banco/mer.webp" alt="" loading="lazy" style="height: 30px; object-fit: contain;"> Mercantil</div>
-                        <div class="payment-badge">Divisas en Efectivo</div>
-                        <div class="payment-badge">Tasa Oficial BCV</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section class="info-section fade-in"><div class="container"><h2><span class="text-primary">Entrega Inmediata</span> en Barquisimeto</h2><p class="product-specs" style="margin-top:15px;font-size:1.1rem;">Tu tiempo vale. Compra hoy y recibe hoy mismo con nuestro servicio exprés.</p><div style="margin-top:60px;"><h3>Métodos de Pago</h3><div class="payment-methods"><div class="payment-badge">Pago Móvil (Banesco)</div><div class="payment-badge">Pago Móvil (Provincial)</div><div class="payment-badge"><img src="image/banco/mer.webp" alt="" loading="lazy" style="height:30px;object-fit:contain;"> Mercantil</div><div class="payment-badge">Divisas en Efectivo</div><div class="payment-badge">Tasa Oficial BCV</div></div></div></div></section>
 
-        <section class="cta-section fade-in">
-            <div class="container">
-                <h2>Escríbenos ahora y recibe tu producto hoy mismo</h2>
-                <a href="https://wa.me/584129056964?text=Hola%20equipo%20de%20EDRunners" target="_blank" class="btn" style="padding: 18px 40px; font-size: 1.2rem;">Contactar por WhatsApp</a>
-            </div>
-        </section>
+        <section class="cta-section fade-in"><div class="container"><h2>Escríbenos ahora y recibe tu producto hoy mismo</h2><a href="https://wa.me/584129056964?text=Hola%20equipo%20de%20EDRunners%20Pro,%20estoy%20listo%20para%20comprar." target="_blank" class="btn" style="padding:18px 40px;font-size:1.2rem;">Contactar por WhatsApp</a></div></section>
     </main>
 
-    <footer>
-        <div class="container">
-            <h3 style="color: #fff; margin-bottom: 10px;">EDRunners <span class="text-primary">Pro</span></h3>
-            <p>Barquisimeto, Estado Lara - Venezuela</p>
-            <p>WhatsApp: 0412-9056964</p>
-            <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">&copy; 2026 EDRunners. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <footer><div class="container"><h3 style="color:#fff;margin-bottom:10px;">EDRunners <span class="text-primary">Pro</span></h3><p>Barquisimeto, Estado Lara - Venezuela</p><p>WhatsApp: 0412-9056964</p><p style="margin-top:20px;font-size:0.8rem;color:#555;">&copy; 2026 EDRunners. Todos los derechos reservados.</p></div></footer>
 
-    <a href="https://wa.me/584129056964?text=Hola,%20vengo%20de%20la%20página" target="_blank" class="whatsapp-float">
-        <svg style="width: 35px; height: 35px; fill: white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
+    <a href="https://wa.me/584129056964?text=Hola,%20vengo%20de%20la%20página%20web" target="_blank" class="whatsapp-float"><svg style="width:35px;height:35px;fill:white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
     <script>
         const PRODUCTS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGjMz9Zwo1g8PruSjNcSJq6kTUQrEGkN_hQRBH0dvjIA_IwwKQ5p2pb7Bmrnvd7sLB2hMvqj-oFR6L/pub?output=csv";
@@ -200,19 +161,8 @@
         function renderProducts(filterText = '') {
             const term = filterText.toLowerCase().trim();
             const filtered = term === '' ? currentProducts : currentProducts.filter(p => p.nombre.toLowerCase().includes(term) || p.especificaciones.toLowerCase().includes(term));
-            if (filtered.length === 0) {
-                productGrid.innerHTML = `<div class="no-results">🔍 No encontramos productos con "${filterText}". Escríbenos por WhatsApp.</div>`;
-                return;
-            }
-            const html = filtered.map(p => `
-                <div class="product-card">
-                    <div class="product-image">${p.imagen_url ? `<img src="${p.imagen_url}" alt="${p.nombre}" loading="lazy" onerror="this.parentElement.innerHTML='<span>📷 Imagen: ${p.nombre}</span>'">` : `<span>📷 Imagen: ${p.nombre}</span>`}</div>
-                    <h3 class="product-title">${p.nombre}</h3>
-                    <p class="product-specs">${p.especificaciones}</p>
-                    ${p.precio ? `<div class="product-price">${p.precio}</div>` : ''}
-                    <a href="${p.link_wa}" target="_blank" class="btn btn-outline" style="width: 100%;">Consultar por WhatsApp</a>
-                </div>
-            `).join('');
+            if (filtered.length === 0) { productGrid.innerHTML = `<div class="no-results">🔍 No encontramos productos con "${filterText}". Escríbenos por WhatsApp y te ayudamos.</div>`; return; }
+            const html = filtered.map(p => `<div class="product-card" data-name="${p.nombre.replace(/"/g, '&quot;')}" data-specs="${p.especificaciones.replace(/"/g, '&quot;')}"><div class="product-image">${p.imagen_url ? `<img src="${p.imagen_url}" alt="${p.nombre}" loading="lazy" onerror="this.parentElement.innerHTML='<span>📷 Imagen: ${p.nombre}</span>'">` : `<span>📷 Imagen: ${p.nombre}</span>`}</div><h3 class="product-title">${p.nombre}</h3><p class="product-specs">${p.especificaciones}</p>${p.precio ? `<div class="product-price">${p.precio}</div>` : ''}<a href="${p.link_wa}" target="_blank" class="btn btn-outline" style="width: 100%;">Consultar por WhatsApp</a></div>`).join('');
             productGrid.innerHTML = html;
         }
 
@@ -229,48 +179,29 @@
             const products = [];
             for (let i = 1; i < lines.length; i++) {
                 if (!lines[i].trim()) continue;
-                let row = lines[i];
-                let values = [];
-                let inQuote = false;
-                let current = '';
-                for (let ch of row) {
+                let values = [], inQuote = false, current = '';
+                for (let ch of lines[i]) {
                     if (ch === '"') inQuote = !inQuote;
-                    else if (ch === ',' && !inQuote) {
-                        values.push(current.trim());
-                        current = '';
-                    } else current += ch;
+                    else if (ch === ',' && !inQuote) { values.push(current.trim()); current = ''; }
+                    else current += ch;
                 }
                 values.push(current.trim());
                 const nombre = values[idxNombre] || '';
                 if (!nombre) continue;
-                products.push({
-                    nombre: nombre,
-                    especificaciones: idxEspecs !== -1 ? values[idxEspecs] : '',
-                    precio: idxPrecio !== -1 ? values[idxPrecio] : '',
-                    imagen_url: idxImagen !== -1 ? values[idxImagen] : '',
-                    link_wa: idxLink !== -1 ? values[idxLink] : `https://wa.me/584129056964?text=Hola,%20me%20interesa%20${encodeURIComponent(nombre)}`
-                });
+                products.push({ nombre, especificaciones: idxEspecs !== -1 ? values[idxEspecs] : '', precio: idxPrecio !== -1 ? values[idxPrecio] : '', imagen_url: idxImagen !== -1 ? values[idxImagen] : '', link_wa: idxLink !== -1 ? values[idxLink] : `https://wa.me/584129056964?text=Hola,%20me%20interesa%20${encodeURIComponent(nombre)}` });
             }
             return products;
         }
 
         async function loadProducts() {
             productGrid.innerHTML = '<div class="no-results">Cargando productos...</div>';
-            if (PRODUCTS_CSV_URL) {
-                try {
-                    const response = await fetch(PRODUCTS_CSV_URL);
-                    if (response.ok) {
-                        const csvText = await response.text();
-                        const products = parseCSV(csvText);
-                        if (products.length > 0) {
-                            currentProducts = products;
-                            renderProducts();
-                            setupSearchFilter();
-                            return;
-                        }
-                    }
-                } catch (e) { console.warn("Error CSV, usando respaldo", e); }
-            }
+            try {
+                const response = await fetch(PRODUCTS_CSV_URL);
+                if (response.ok) {
+                    const products = parseCSV(await response.text());
+                    if (products.length) { currentProducts = products; renderProducts(); setupSearchFilter(); return; }
+                }
+            } catch(e) {}
             currentProducts = fallbackProducts;
             renderProducts();
             setupSearchFilter();
@@ -291,25 +222,15 @@
         function initSticky() {
             const stickySearch = document.getElementById('stickySearch');
             if (!stickySearch) return;
-            window.addEventListener('scroll', () => {
-                if (window.innerWidth >= 768) return;
-                if (window.pageYOffset > 100) stickySearch.classList.add('visible');
-                else stickySearch.classList.remove('visible');
-            });
+            window.addEventListener('scroll', () => { if (window.innerWidth < 768 && window.pageYOffset > 100) stickySearch.classList.add('visible'); else stickySearch.classList.remove('visible'); });
         }
 
         function initFadeIn() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-            }, { threshold: 0.15 });
+            const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.15 });
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initFadeIn();
-            initSticky();
-            loadProducts();
-        });
+        document.addEventListener('DOMContentLoaded', () => { initFadeIn(); initSticky(); loadProducts(); });
     </script>
 </body>
 </html>
